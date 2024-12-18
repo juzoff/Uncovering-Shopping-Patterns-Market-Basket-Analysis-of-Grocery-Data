@@ -32,9 +32,19 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
   - Filtered the generated rules to retain only those that possess exactly one antecedent and one consequent, focusing on simpler and more interpretable rules.
 - Summary of Rules:
   - Viewed a summary of the filtered rules to gain insights into key metrics such as support, confidence, and lift, allowing for an assessment of the strength of the rules.
+ 
+![2](https://github.com/user-attachments/assets/980e91d4-5992-4aaf-b36a-5d0a154b023f) 
+
 - Top Rules Inspection:
   - Inspected the top 10 filtered rules to identify the most significant associations based on the defined parameters, helping to understand customer purchasing behavior.
 - Visualization Preparation:
   - Loaded necessary visualization packages (arules and arulesViz) to aid in the graphical representation of the association rules.
 - Graphical Representation:
   - Produced a graph using the 'graph' method, employing HTML widgets for dynamic visualization of the association rules, aiding in the exploration of item relationships in a more interactive format.
+
+![3](https://github.com/user-attachments/assets/37bd0cd0-e3fd-448e-bd42-1d9f08d98292)
+
+
+- Interpretation of Results:
+  - k
+
