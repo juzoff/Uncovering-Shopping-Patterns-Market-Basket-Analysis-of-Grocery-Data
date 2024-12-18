@@ -46,5 +46,54 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 
 - Interpretation of Results:
-  - k
+  - Rule 1: {brandy} => {whole milk}
+    - Support: This rule occurs in approxmately 31 observations (from the 38765 total observations)
+    - Confidence: (34.21%) - If a customer buys brandy, there is a 34.21% chance they also buy whole milk.
+    - Lift (2.1663) - Customers buying {brandy} are 2.17 times more likely to buy {whole milk} compared to random transactions, which indicates a strong association.
 
+  - Rule 2: {softener} => {whole milk}
+    - Support: This rule occurs in approxmately 31 observations (from the 38765 total observations)
+    - Confidence: (29.27%) - If a customer buys softener, there is a 29.27% chance they also buy whole milk.
+    - Lift (1.8533) - Softener buyers are 1.85 times more likely to buy whole milk than random transactions, showing a moderate positive association.
+
+  - Rule 3: {finished products} => {whole milk}
+    - Support: This rule occurs in approxmately 31 observations (from the 38765 total observations)
+    - Confidence: (20.31%) - If a customer buys finished products, there is a 20.31% chance they also buy whole milk.
+    - Lift (1.2862) - Finished product buyers are 1.29 times more likely to buy whole milk than random transactions, indicating a weak positive association
+
+---
+
+### 3. Market Basket Analysis with 2 antecedents and 1 consequent
+- Rule Generation with Apriori Algorithm:
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0008 (which corresponds to approximately 31 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+- Filtering Rules:
+  - Filtered the generated rules to retain only those that possess exactly two antecedents and one consequent.
+- Summary of Rules:
+  - Viewed a summary of the filtered rules to gain insights into key metrics such as support, confidence, and lift, allowing for an assessment of the strength of the rules.
+ 
+![4](https://github.com/user-attachments/assets/c9a7f939-3980-4265-ba77-ac953e8fc4d4)
+ 
+
+- Top Rules Inspection:
+  - Inspected the top 10 filtered rules to identify the most significant associations based on the defined parameters, helping to understand customer purchasing behavior.
+- Visualization Preparation:
+  - Loaded necessary visualization packages (arules and arulesViz) to aid in the graphical representation of the association rules.
+- Graphical Representation:
+  - Produced a graph using the 'graph' method, employing HTML widgets for dynamic visualization of the association rules, aiding in the exploration of item relationships in a more interactive format.
+
+![5](https://github.com/user-attachments/assets/a019353d-006b-44c1-8bd4-bfcf52e031e6)
+
+
+- Interpretation of Results:
+  - Rule 1: {pastry, soda} => {whole milk}
+    - Support: This rule occurs in approximately 34 observations (from the 38765 total observations).
+    - Confidence: (22.95%) - If a customer buys {pastry} and {soda}, there is a 22.95% chance they also buy {whole milk}.
+    - Lift: (1.4533) - Customers buying {pastry} and {soda} are 1.45 times more likely to buy {whole milk} compared to random transactions, indicating a weak positive association.
+  - Rule 2: {sausage, yogurt} => {whole milk}
+    - Support: This rule occurs in approximately 56 observations (from the 38765 total observations).
+    - Confidence: (25.58%) - If a customer buys {sausage} and {yogurt}, there is a 25.58% chance they also buy {whole milk}.
+    - Lift: (1.6199) - Customers buying {sausage} and {yogurt} are 1.62 times more likely to buy {whole milk} compared to random transactions, indicating a moderate positive association.
+  - Rule 3: {rolls/buns, sausage} => {whole milk}
+    - Support: This rule occurs in approximately 44 observations (from the 38765 total observations).
+    - Confidence: (21.25%) - If a customer buys {rolls/buns} and {sausage}, there is a 21.25% chance they also buy {whole milk}.
+    - Lift: (1.3456) - Customers buying {rolls/buns} and {sausage} are 1.35 times more likely to buy {whole milk} compared to random transactions, indicating a weak positive association.
