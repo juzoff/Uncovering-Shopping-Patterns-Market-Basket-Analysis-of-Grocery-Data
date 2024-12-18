@@ -219,3 +219,24 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 --- 
 
 ### 7. K-Means Clustering of Market Basket Data: Identifying Item Frequency Groups
+
+- Data Aggregation and Scaling:
+  - Aggregated market basket data to calculate the frequency of each item, then scaled the frequency values to standardize the dataset. Scaling is a crucial step for distance-based methods like k-means clustering to ensure that all features contribute equally to the distance calculations.
+
+- Elbow Method for Optimal Clustering:
+  - Conducted an analysis to determine the optimal number of clusters (k) by using the Elbow Method. This involved calculating the total within-cluster sum of squares (WSS) for k values ranging from 1 to 10 and plotting the results. The "elbow" point in the plot helps identify the point where adding more clusters yields diminishing returns in variance reduction.
+
+![11](https://github.com/user-attachments/assets/fa333d3d-daf7-429b-a0cc-3de10201e899)
+
+- K-Means Clustering Application:
+  - Applied the k-means clustering algorithm with the identified optimal number of clusters (k=3) to group the items based on their purchase frequency. This process included initializing the algorithm with multiple random starts to enhance the chances of finding a global optimum.
+
+- Cluster Assignment and Visualization:
+  - Assigned items to their respective clusters and created a scatterplot to visualize the frequency of items against their cluster assignments. This visualization employs distinct colors for each cluster, making it easier to interpret cluster distribution related to purchase frequency.
+
+![12](https://github.com/user-attachments/assets/338eae57-6b40-40f2-8e1d-fb5a3a8927b3)
+
+- Descriptive Cluster Labeling:
+  - Enhanced the cluster analysis by adding descriptive labels ("Low Frequency Items," "Medium Frequency Items," and "High Frequency Items") to the clustering results, which contextualizes the clusters and facilitates better understanding of item behavior in the market basket data.
+
+ ![13](https://github.com/user-attachments/assets/71140ecd-f8ed-46a0-8e7c-0cb3b8dcb205)
