@@ -201,24 +201,7 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ---
 
-### 6. Frequent Pattern Analysis
-- Utilized the arules package in R to conduct a thorough examination of item frequencies within the transaction dataset, which consists of 38,765 observations.
-- Employed the itemFrequency function to count the absolute frequency of each item across all transactions, facilitating a clear understanding of item popularity.
-- Sorted the computed item frequencies in descending order to easily identify the most frequently purchased items.
-- Displayed the top five items by frequency, providing valuable insights into consumer preferences that can be leveraged for inventory management and targeted marketing initiatives.
-
-![10](https://github.com/user-attachments/assets/1e3ce382-4edf-467b-8e6f-cffb0621cf3e)
-
-- Interpretation:
-  - Whole Milk (2363): This item is the most frequently purchased, with 2,363 transactions involving whole milk. Its high frequency indicates that it is a staple product for consumers and suggests strong household demand. Retailers might consider ensuring an ample supply of whole milk to meet customer needs.
-  - Other Vegetables (1827): With 1,827 transactions, other vegetables rank second. This suggests that consumers are likely incorporating a variety of vegetables into their diets, opening opportunities for promotions or bundle deals involving fresh produce to encourage healthy eating.
-  - Rolls/Buns (1646): This item appears in 1,646 transactions, indicating significant consumption, likely associated with meal preparation, such as sandwiches or burgers. Retailers could use this insight to promote related items, like spreads or meats, to boost sales.
-  - Soda (1453): The frequency of 1,453 transactions for soda suggests its popularity as a beverage choice. Given health trends toward reducing sugary drink consumption, retailers might consider diversifying their beverage offerings or incorporating healthier alternatives alongside soda promotions.
-  - Yogurt (1285): With 1,285 transactions, yogurt is a popular item, aligning with trends towards healthy snacking and breakfast options. This could be an opportunity for retailers to explore new yogurt flavors or packaging, as well as to promote yogurt alongside fresh fruits or cereals.
-
---- 
-
-### 7. K-Means Clustering of Market Basket Data: Identifying Item Frequency Groups
+### 6. K-Means Clustering of Market Basket Data: Identifying Item Frequency Groups
 
 - Data Aggregation and Scaling:
   - Aggregated market basket data to calculate the frequency of each item, then scaled the frequency values to standardize the dataset. Scaling is a crucial step for distance-based methods like k-means clustering to ensure that all features contribute equally to the distance calculations.
@@ -240,3 +223,11 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
   - Enhanced the cluster analysis by adding descriptive labels ("Low Frequency Items," "Medium Frequency Items," and "High Frequency Items") to the clustering results, which contextualizes the clusters and facilitates better understanding of item behavior in the market basket data.
 
  ![13](https://github.com/user-attachments/assets/71140ecd-f8ed-46a0-8e7c-0cb3b8dcb205)
+
+---
+
+### 7. Frequent Pattern Analysis
+- Identified top 5 most frequent items purchased
+
+![14](https://github.com/user-attachments/assets/a053d5dc-b2d2-40cf-b24e-3552d8aefc9c)
+
