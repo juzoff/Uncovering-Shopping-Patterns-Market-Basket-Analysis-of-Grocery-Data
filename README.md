@@ -229,5 +229,6 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 ### 7. Frequent Pattern Analysis
 - Identified top 5 most frequent items purchased
 
-![15](https://github.com/user-attachments/assets/9282f195-d85f-4e16-9cf1-e2b93e0eed43)
+![14](https://github.com/user-attachments/assets/92089e7b-92f9-400d-b170-e6a1ad99d104)
+
 
