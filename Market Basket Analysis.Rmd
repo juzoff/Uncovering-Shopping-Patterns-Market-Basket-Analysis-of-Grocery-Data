@@ -1,0 +1,239 @@
+---
+title: "Market Basket Analysis"
+output: html_document
+date: "2024-12-16"
+---
+
+#1. Data Preparation for Market Basket Analysis
+
+```{r}
+mba <- read.csv("C:/Users/jivko/Documents/Data Analytics, Big Data, and Predictive Analytics/Personal Project/Market Basket Analysis/Groceries_dataset.csv")
+
+# Print the first few rows
+head(mba, 20)
+```
+```{r}
+str(mba)
+```
+```{r}
+install.packages("arules")
+library(arules)
+```
+
+```{r}
+# Combine 'Member_number' and 'Date' into a single identifier
+mba_data <- data.frame(TransactionID = paste(mba$Member_number, mba$Date, sep = "_"),
+                       Item = mba$itemDescription)
+
+# Aggregate items by TransactionID
+transactions <- split(mba_data$Item, mba_data$TransactionID)
+
+# Convert to a transaction object
+transactions <- as(transactions, "transactions")
+```
+```{r}
+str(mba_data)
+```
+```{r}
+head(mba_data, 10)
+```
+
+#2. Market Basket Analysis with 1 antecedent and 1 consequent 
+```{r}
+# Apply apriori to generate rules
+rules <- apriori(transactions, 
+                 parameter = list(supp = 0.0008, conf = 0.20))
+
+rules <- rules[which(size(lhs(rules)) == 1 & size(rhs(rules)) == 1)]
+
+# View a summary of the filtered rules
+summary(rules)
+
+# Inspect the top 10 filtered rules
+inspect((rules))
+```
+
+```{r}
+inspect(rules)
+```
+
+```{r}
+# Load required packages
+library(arules)
+library(arulesViz)
+
+# Visualize: Graph
+plot(rules, method = "graph", engine = "htmlwidget")
+```
+
+#3. Market Basket Analysis with 2 antecedents and 1 consequent 
+```{r}
+# Rules with 2 items in lhs and 1 in rhs
+rules_len2 <- apriori(transactions, 
+                      parameter = list(supp = 0.0008, conf = 0.20))
+rules_len2 <- rules_len2[which(size(lhs(rules_len2)) == 2 & size(rhs(rules_len2)) == 1)]
+
+# View a summary of the filtered rules
+summary(rules_len2)
+
+inspect(head(rules_len2))
+```
+
+```{r}
+inspect(rules_len2)
+```
+
+```{r}
+# Load required packages
+library(arules)
+library(arulesViz)
+
+# Visualize: Scatter Plot
+plot(rules_len2, method = "scatterplot", measure = c("support", "confidence"), shading = "lift")
+
+# Visualize: Grouped Matrix Plot
+plot(rules_len2, method = "grouped")
+
+# Visualize: Graph
+plot(rules_len2, method = "graph", engine = "htmlwidget")
+```
+
+#4. Market Basket Analysis with 3 antecedents and 1 consequent 
+```{r}
+# Rules with 2 items in lhs and 1 in rhs
+rules_len23 <- apriori(transactions, 
+                      parameter = list(supp = 0.00032, conf = 0.20))
+rules_len23 <- rules_len23[which(size(lhs(rules_len23)) == 3 & size(rhs(rules_len23)) == 1)]
+
+# View a summary of the filtered rules
+summary(rules_len23)
+
+inspect(head(rules_len23))
+```
+
+```{r}
+inspect(rules_len23)
+```
+
+```{r}
+# Load required packages
+library(arules)
+library(arulesViz)
+
+# Visualize: Scatter Plot
+plot(rules_len23, method = "scatterplot", measure = c("support", "confidence"), shading = "lift")
+
+
+# Visualize: Graph
+plot(rules_len23, method = "graph", engine = "htmlwidget")
+```
+
+#5. Market Basket Analysis with 4 antecedents and 1 consequent 
+```{r}
+# Rules with 2 items in lhs and 1 in rhs
+rules_len233 <- apriori(transactions, 
+                      parameter = list(supp = 0.0002, conf = 0.20))
+rules_len233 <- rules_len233[which(size(lhs(rules_len233)) == 4 & size(rhs(rules_len233)) == 1)]
+
+# View a summary of the filtered rules
+summary(rules_len233)
+
+inspect(head(rules_len233))
+```
+
+```{r}
+inspect(rules_len233)
+```
+
+```{r}
+# Load required packages
+library(arules)
+library(arulesViz)
+
+# Visualize: Scatter Plot
+plot(rules_len233, method = "scatterplot", measure = c("support", "confidence"), shading = "lift")
+
+# Visualize: Graph
+plot(rules_len233, method = "graph", engine = "htmlwidget")
+```
+
+
+
+#6. K-Means Clustering of Market Basket Data: Identifying Item Frequency Groups
+
+```{r}
+library(dplyr)
+library(ggplot2)
+
+# Aggregate data
+basket_summary <- mba_data %>%
+    group_by(Item) %>%
+    summarise(Frequency = n())
+
+# Scale the data (this is important for distance-based methods like k-means)
+basket_data <- scale(basket_summary$Frequency)
+
+# Range of k values to try
+k_values <- 1:10
+
+# Store the WSS values
+wss_values <- sapply(k_values, function(k) {
+    kmeans(basket_data, centers = k, nstart = 25)$tot.withinss
+})
+
+# Plot the Elbow Method
+ggplot(data.frame(k = k_values, WSS = wss_values), aes(x = k, y = WSS)) +
+    geom_line() +
+    geom_point() +
+    labs(title = "Elbow Method for Optimal k",
+         x = "Number of Clusters (k)",
+         y = "Total Within-Cluster Sum of Squares (WSS)") +
+    theme_minimal()
+```
+
+
+```{r}
+# Apply K-Means with the optimal k (k = 3)
+set.seed(123)
+kmeans_result <- kmeans(basket_data, centers = 3)
+
+# Add the cluster assignment to the basket_summary data frame
+basket_summary$Cluster <- as.factor(kmeans_result$cluster)
+
+# Scatterplot of frequency vs clusters
+library(ggplot2)
+
+ggplot(basket_summary, aes(x = Frequency, y = Cluster, color = Cluster)) +
+    geom_point(size = 3) +  # Plot points
+    labs(title = "Scatterplot of Frequency vs Clusters",
+         x = "Frequency",
+         y = "Cluster") +
+    theme_minimal() +
+    scale_color_brewer(palette = "Set1") +
+    theme(legend.position = "bottom")
+```
+
+```{r}
+# Add a new descriptive column for clusters with specific labels
+basket_summary$Cluster_Label <- case_when(
+  kmeans_result$cluster == 1 ~ "Low Frequency Items",
+  kmeans_result$cluster == 2 ~ "Medium Frequency Items",
+  kmeans_result$cluster == 3 ~ "High Frequency Items"
+)
+
+# View the updated data frame
+head(basket_summary)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
