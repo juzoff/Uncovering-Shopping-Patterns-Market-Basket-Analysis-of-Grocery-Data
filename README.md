@@ -97,3 +97,125 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
     - Support: This rule occurs in approximately 44 observations (from the 38765 total observations).
     - Confidence: (21.25%) - If a customer buys {rolls/buns} and {sausage}, there is a 21.25% chance they also buy {whole milk}.
     - Lift: (1.3456) - Customers buying {rolls/buns} and {sausage} are 1.35 times more likely to buy {whole milk} compared to random transactions, indicating a weak positive association.
+
+---
+
+### 4. Market Basket Analysis with 3 antecedents and 1 consequent
+- Rule Generation with Apriori Algorithm:
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0003 (which corresponds to approximately 11 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+- Filtering Rules:
+  - Filtered the generated rules to retain only those that possess exactly three antecedents and one consequent.
+- Summary of Rules:
+  - Viewed a summary of the filtered rules to gain insights into key metrics such as support, confidence, and lift, allowing for an assessment of the strength of the rules.
+ 
+![6](https://github.com/user-attachments/assets/0ea90e6c-4466-4bb2-8622-19dc09b91b40)
+
+
+- Top Rules Inspection:
+  - Inspected the top 10 filtered rules to identify the most significant associations based on the defined parameters, helping to understand customer purchasing behavior.
+- Visualization Preparation:
+  - Loaded necessary visualization packages (arules and arulesViz) to aid in the graphical representation of the association rules.
+- Graphical Representation:
+  - Produced a graph using the 'graph' method, employing HTML widgets for dynamic visualization of the association rules, aiding in the exploration of item relationships in a more interactive format.
+
+![7](https://github.com/user-attachments/assets/88e9db2f-16c2-43da-925e-0fb972ede538)
+
+
+
+- Interpretation of Results:
+  - Rule 1: {other vegetables, pastry, soda} => {whole milk}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (83.33%) - If a customer buys {other vegetables}, {pastry}, and {soda}, there is an 83.33% chance they also buy {whole milk}.
+    - Lift: (5.2768) - Customers buying {other vegetables}, {pastry}, and {soda} are 5.28 times more likely to buy {whole milk} compared to random transactions, indicating a very strong association.
+  - Rule 2: {pastry, soda, whole milk} => {other vegetables}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (35.71%) - If a customer buys {pastry}, {soda}, and {whole milk}, there is a 35.71% chance they also buy {other vegetables}.
+    - Lift: (2.9250) - Customers buying {pastry}, {soda}, and {whole milk} are 2.93 times more likely to buy {other vegetables} compared to random transactions, indicating a moderate to strong association.
+  - Rule 3: {other vegetables, pastry, whole milk} => {soda}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (50.00%) - If a customer buys {other vegetables}, {pastry}, and {whole milk}, there is a 50.00% chance they also buy {soda}.
+    - Lift: (5.1490) - Customers buying {other vegetables}, {pastry}, and {whole milk} are 5.15 times more likely to buy {soda} compared to random transactions, indicating a very strong association.
+  - Rule 4: {other vegetables, soda, whole milk} => {pastry}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (29.41%) - If a customer buys {other vegetables}, {soda}, and {whole milk}, there is a 29.41% chance they also buy {pastry}.
+    - Lift: (5.6859) - Customers buying {other vegetables}, {soda}, and {whole milk} are 5.69 times more likely to buy {pastry} compared to random transactions, indicating a very strong association.
+  - Rule 5: {rolls/buns, sausage, yogurt} => {whole milk}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (55.56%) - If a customer buys {rolls/buns}, {sausage}, and {yogurt}, there is a 55.56% chance they also buy {whole milk}.
+    - Lift: (3.5179) - Customers buying {rolls/buns}, {sausage}, and {yogurt} are 3.52 times more likely to buy {whole milk} compared to random transactions, indicating a strong association.
+  - Rule 6: {sausage, whole milk, yogurt} => {rolls/buns}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (22.73%) - If a customer buys {sausage}, {whole milk}, and {yogurt}, there is a 22.73% chance they also buy {rolls/buns}.
+    - Lift: (2.0660) - Customers buying {sausage}, {whole milk}, and {yogurt} are 2.07 times more likely to buy {rolls/buns} compared to random transactions, indicating a weak to moderate association.
+  - Rule 7: {rolls/buns, sausage, whole milk} => {yogurt}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (29.41%) - If a customer buys {rolls/buns}, {sausage}, and {whole milk}, there is a 29.41% chance they also buy {yogurt}.
+    - Lift: (3.4248) - Customers buying {rolls/buns}, {sausage}, and {whole milk} are 3.42 times more likely to buy {yogurt} compared to random transactions, indicating a strong association.
+  - Rule 8: {rolls/buns, whole milk, yogurt} => {sausage}
+    - Support: This rule occurs in approximately 13 observations (from the 38765 total observations).
+    - Confidence: (25.00%) - If a customer buys {rolls/buns}, {whole milk}, and {yogurt}, there is a 25.00% chance they also buy {sausage}.
+    - Lift: (4.1426) - Customers buying {rolls/buns}, {whole milk}, and {yogurt} are 4.14 times more likely to buy {sausage} compared to random transactions, indicating a very strong association.
+
+---
+
+### 5. Market Basket Analysis with 4 antecedents and 1 consequent
+- Rule Generation with Apriori Algorithm:
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0002 (which corresponds to approximately 7 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+- Filtering Rules:
+  - Filtered the generated rules to retain only those that possess exactly four antecedents and one consequent.
+- Summary of Rules:
+  - Viewed a summary of the filtered rules to gain insights into key metrics such as support, confidence, and lift, allowing for an assessment of the strength of the rules.
+ 
+![8](https://github.com/user-attachments/assets/6ebf0f92-22f7-4bac-854b-fe5d0f3e2844)
+
+- Top Rules Inspection:
+  - Inspected the top 10 filtered rules to identify the most significant associations based on the defined parameters, helping to understand customer purchasing behavior.
+- Visualization Preparation:
+  - Loaded necessary visualization packages (arules and arulesViz) to aid in the graphical representation of the association rules.
+- Graphical Representation:
+  - Produced a graph using the 'graph' method, employing HTML widgets for dynamic visualization of the association rules, aiding in the exploration of item relationships in a more interactive format.
+
+![9](https://github.com/user-attachments/assets/3e379251-3aea-4723-9282-a66f61bde9da)
+
+- Interpretation of Results:
+  - Rule 1: {pork, sausage, soda, yogurt} => {whole milk}
+    - Support: This rule occurs in approximately 8 observations (from the 38765 total observations).
+    - Confidence: (100%) - If a customer buys {pork}, {sausage}, {soda}, and {yogurt}, there is a 100% chance they also buy {whole milk}.
+    - Lift: (6.3322) - Customers buying {pork}, {sausage}, {soda}, and {yogurt} are 6.33 times more likely to buy {whole milk} compared to random transactions, indicating a very strong association.
+  - Rule 2: {pork, sausage, whole milk, yogurt} => {soda}
+    - Support: This rule occurs in approximately 8 observations (from the 38765 total observations).
+    - Confidence: (75%) - If a customer buys {pork}, {sausage}, {whole milk}, and {yogurt}, there is a 75% chance they also buy {soda}.
+    - Lift: (7.7235) - Customers buying {pork}, {sausage}, {whole milk}, and {yogurt} are 7.72 times more likely to buy {soda} compared to random transactions, indicating a very strong association.
+  - Rule 3: {pork, sausage, soda, whole milk} => {yogurt}
+    - Support: This rule occurs in approximately 8 observations (from the 38765 total observations).
+    - Confidence: (75%) - If a customer buys {pork}, {sausage}, {soda}, and {whole milk}, there is a 75% chance they also buy {yogurt}.
+    - Lift: (8.7333) - Customers buying {pork}, {sausage}, {soda}, and {whole milk} are 8.73 times more likely to buy {yogurt} compared to random transactions, indicating a very strong association.
+  - Rule 4: {pork, soda, whole milk, yogurt} => {sausage}
+    - Support: This rule occurs in approximately 8 observations (from the 38765 total observations).
+    - Confidence: (100%) - If a customer buys {pork}, {soda}, {whole milk}, and {yogurt}, there is a 100% chance they also buy {sausage}.
+    - Lift: (16.5703) - Customers buying {pork}, {soda}, {whole milk}, and {yogurt} are 16.57 times more likely to buy {sausage} compared to random transactions, indicating an extremely strong association.
+  - Rule 5: {sausage, soda, whole milk, yogurt} => {pork}
+    - Support: This rule occurs in approximately 8 observations (from the 38765 total observations).
+    - Confidence: (75%) - If a customer buys {sausage}, {soda}, {whole milk}, and {yogurt}, there is a 75% chance they also buy {pork}.
+    - Lift: (20.2203) - Customers buying {sausage}, {soda}, {whole milk}, and {yogurt} are 20.22 times more likely to buy {pork} compared to random transactions, indicating an exceptionally strong association.
+
+---
+
+### 6. Frequent Pattern Analysis
+- Utilized the arules package in R to conduct a thorough examination of item frequencies within the transaction dataset, which consists of 38,765 observations.
+- Employed the itemFrequency function to count the absolute frequency of each item across all transactions, facilitating a clear understanding of item popularity.
+- Sorted the computed item frequencies in descending order to easily identify the most frequently purchased items.
+- Displayed the top five items by frequency, providing valuable insights into consumer preferences that can be leveraged for inventory management and targeted marketing initiatives.
+
+![10](https://github.com/user-attachments/assets/1e3ce382-4edf-467b-8e6f-cffb0621cf3e)
+
+- Interpretation:
+  - Whole Milk (2363): This item is the most frequently purchased, with 2,363 transactions involving whole milk. Its high frequency indicates that it is a staple product for consumers and suggests strong household demand. Retailers might consider ensuring an ample supply of whole milk to meet customer needs.
+  - Other Vegetables (1827): With 1,827 transactions, other vegetables rank second. This suggests that consumers are likely incorporating a variety of vegetables into their diets, opening opportunities for promotions or bundle deals involving fresh produce to encourage healthy eating.
+  - Rolls/Buns (1646): This item appears in 1,646 transactions, indicating significant consumption, likely associated with meal preparation, such as sandwiches or burgers. Retailers could use this insight to promote related items, like spreads or meats, to boost sales.
+  - Soda (1453): The frequency of 1,453 transactions for soda suggests its popularity as a beverage choice. Given health trends toward reducing sugary drink consumption, retailers might consider diversifying their beverage offerings or incorporating healthier alternatives alongside soda promotions.
+  - Yogurt (1285): With 1,285 transactions, yogurt is a popular item, aligning with trends towards healthy snacking and breakfast options. This could be an opportunity for retailers to explore new yogurt flavors or packaging, as well as to promote yogurt alongside fresh fruits or cereals.
+
+--- 
+
+### 7. K-Means Clustering of Market Basket Data: Identifying Item Frequency Groups
