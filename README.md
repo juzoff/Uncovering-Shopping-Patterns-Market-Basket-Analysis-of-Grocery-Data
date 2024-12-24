@@ -27,7 +27,7 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ### 2. Market Basket Analysis with 1 antecedent and 1 consequent
 - Rule Generation with Apriori Algorithm:
-  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0008 (which corresponds to approximately 31 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0008 and confidence at 0.20 to identify relevant item relationships.
 - Filtering Rules:
   - Filtered the generated rules to retain only those that possess exactly one antecedent and one consequent, focusing on simpler and more interpretable rules.
 - Summary of Rules:
@@ -65,7 +65,7 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ### 3. Market Basket Analysis with 2 antecedents and 1 consequent
 - Rule Generation with Apriori Algorithm:
-  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0008 (which corresponds to approximately 31 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0008 and confidence at 0.20 to identify relevant item relationships.
 - Filtering Rules:
   - Filtered the generated rules to retain only those that possess exactly two antecedents and one consequent.
 - Summary of Rules:
@@ -102,7 +102,7 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ### 4. Market Basket Analysis with 3 antecedents and 1 consequent
 - Rule Generation with Apriori Algorithm:
-  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0003 (which corresponds to approximately 11 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0003 and confidence at 0.20 to identify relevant item relationships.
 - Filtering Rules:
   - Filtered the generated rules to retain only those that possess exactly three antecedents and one consequent.
 - Summary of Rules:
@@ -160,7 +160,7 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ### 5. Market Basket Analysis with 4 antecedents and 1 consequent
 - Rule Generation with Apriori Algorithm:
-  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0002 (which corresponds to approximately 7 transactions, given the dataset consists of 38,765 observations) and confidence at 0.20 to identify relevant item relationships.
+  - Employed the Apriori algorithm on the transaction data to generate association rules, setting support at 0.0002 and confidence at 0.20 to identify relevant item relationships.
 - Filtering Rules:
   - Filtered the generated rules to retain only those that possess exactly four antecedents and one consequent.
 - Summary of Rules:
