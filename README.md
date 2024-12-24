@@ -231,4 +231,15 @@ Subsequently, I performed frequent pattern analysis with the FP-Growth algorithm
 
 ![14](https://github.com/user-attachments/assets/92089e7b-92f9-400d-b170-e6a1ad99d104)
 
+---
+
+### 8. Dashboard Insights for Association Rule Mining and Clustering Analysis
+- This interactive dashboard provides comprehensive insights into patterns and clusters within transactional datasets. Key features include:
+  - Dynamic Slicers: Filter and analyze rules based on antecedents, consequents, or cluster items.
+  - Rule Summaries: View the total count of rules, confidence scores, and lift metrics for detailed rule breakdowns.
+  - Item Analysis: Explore the frequency of most common antecedents and consequents, as well as item purchase behavior across clusters.
+  - Cluster Insights: Examine unique item counts and frequency distributions categorized into high-, medium-, and low-frequency item
+- This dashboard simplifies complex data relationships, empowering users to uncover actionable insights from association rules and clustering results.
+
+![gg](https://github.com/user-attachments/assets/c5f6fea4-bc0e-454c-aa73-8023dbc15bf7)
 
